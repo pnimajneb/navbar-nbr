@@ -1,0 +1,6 @@
+.tilesSeparately {
+    display: flex;
+    flex-direction: column;
+    margin-top: 200px;
+    margin-bottom: 200px;
+}

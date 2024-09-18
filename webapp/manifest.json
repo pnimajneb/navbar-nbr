@@ -59,9 +59,20 @@
 					"fallbackLocale": ""
 				}
 			},
+			"tile": {
+      		  "type": "sap.ui.model.json.JSONModel",
+      		  "uri": "Tiles.json"
+      		},
 			"": {
 				"dataSource": "employeeRemote"
 			}
+		},
+		"resources": {
+		  "css": [
+			{
+			  "uri": "css/style.css"
+			}
+		  ]
 		},
 		"routing": {
 			"config": {

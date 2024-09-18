@@ -1,0 +1,28 @@
+{
+    "Tiles": [
+        {
+            "TileName": "Trasse",
+            "Quantity": 21
+        },
+        {
+            "TileName": "Bestellprozess",
+            "Quantity": 2
+        },
+        {
+            "TileName": "Terminplanung",
+            "Quantity": 34
+        },
+        {
+            "TileName": "Benutzerverwaltung",
+            "Quantity": 6
+        },
+        {
+            "TileName": "Stammdaten",
+            "Quantity": 15
+        },
+        {
+            "TileName": "Docs editor",
+            "Quantity": 4
+        }
+    ]
+}

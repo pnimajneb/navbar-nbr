@@ -1,0 +1,36 @@
+<mvc:View
+    controllerName="sap.ui.demo.nav.controller.GenericTile"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <List 
+    id="tileList"
+    class="sapUiResponsiveMargin"
+    width="auto"
+    items="{ 
+        path : 'tile>/Tiles',
+		sorter : {
+			path : 'TileName'
+			}
+        }">
+		<headerToolbar>
+         <Toolbar>
+            <Title text="Search Bar"/>
+            <ToolbarSpacer/>
+            <SearchField 
+               width="50%" 
+               liveChange=".onFilterTiles"/>
+         </Toolbar>
+      </headerToolbar>
+	  <items>
+            <CustomListItem>
+                <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tilesSeparately" 
+                    header="{tile>TileName}" 
+                    press="press">
+                    <TileContent>
+                        <ImageContent src="sap-icon://home-share" />
+                    </TileContent>
+                </GenericTile>
+            </CustomListItem>
+        </items>
+	</List>
+</mvc:View>

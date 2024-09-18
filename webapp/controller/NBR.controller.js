@@ -3,7 +3,7 @@ sap.ui.define([
  ], function (Controller) {
     "use strict";
  
-    return Controller.extend("sap.ui.demo.nav.controller.NBR", {
+    return Controller.extend("sap.ui.demo.nav.controller.Nbr", {
  
     });
  

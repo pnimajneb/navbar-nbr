@@ -4,7 +4,8 @@
    xmlns:mvc="sap.ui.core.mvc">
    <Page title="NBR" class="sapUiResponsiveContentPadding">
       <content>
-         <Button text="Test Button" class="sapUiTinyMarginEnd"/>
+         <mvc:XMLView viewName="sap.ui.demo.nav.view.IconTabHeader"/>
+	  	   <mvc:XMLView viewName="sap.ui.demo.nav.view.GenericTile"/>
       </content>
    </Page>
 </mvc:View>
