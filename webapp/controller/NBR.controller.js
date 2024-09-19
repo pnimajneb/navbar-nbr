@@ -1,14 +1,11 @@
 sap.ui.define([
-   "sap/ui/core/mvc/Controller",
-   "sap/ui/core/Fragment",
-   "sap/ui/model/Filter",
-   "sap/ui/model/FilterOperator"
-], function (Controller, Fragment, Filter, FilterOperator) {
+   "sap/ui/core/mvc/Controller"
+], function (Controller) {
    "use strict";
 
    return Controller.extend("sap.ui.demo.nav.controller.Nbr", {
        onInit: function () {
-           // any initialization logic here
+        // any initialization logic here
        },
 
        onTabSelect: function (oEvent) {
@@ -22,34 +19,40 @@ sap.ui.define([
      },
 
        onFilterTiles: function(oEvent) {
-    // get search query
-    const sQuery = oEvent.getParameter("newValue");
+        // get search query
+        const sQuery = oEvent.getParameter("newValue");
 
-    // IDs that need to be filtered
-    const aPanelIds = [
-        "PanelTrasse",
-        "PanelBestellprozess",
-        "PanelTerminplanung",
-        "PanelBenutzerverwaltung",
-        "PanelStammdaten"
-    ];
+        // IDs that need to be filtered
+        const aPanelIds = [
+            "PanelTrasse",
+            "PanelBestellprozess",
+            "PanelTerminplanung",
+            "PanelBenutzerverwaltung",
+            "PanelStammdaten"
+        ];
 
-    // looping through each panel and applying the filter
-    aPanelIds.forEach(function(panelId) {
-        var oPanel = this.getView().byId(panelId);
-        var aTiles = oPanel.getContent();
+        // looping through each panel and applying the filter
+        aPanelIds.forEach(function(panelId) {
+            var oPanel = this.getView().byId(panelId);
+            // aTiles is an array of GenericTile controls 
+            var aTiles = oPanel.getContent();
+            var bAnyTileVisible = false;
 
-        // Loop through tiles and filter based on header text
-        aTiles.forEach(function(oTile) {
-            var sTileHeader = oTile.getHeader();
-            var bVisible = !sQuery || sTileHeader.toLowerCase().indexOf(sQuery.toLowerCase()) !== -1;
-            oTile.setVisible(bVisible);
-        });
-    }.bind(this));
+            // looping through tiles and filter based on tiles header names
+            aTiles.forEach(function(oTile) {
+                // retrieving the header text of the current GenericTile (oTile)
+                var sTileHeader = oTile.getHeader();
+                var bVisible = !sQuery || sTileHeader.toLowerCase().indexOf(sQuery.toLowerCase()) !== -1;
+                oTile.setVisible(bVisible);
 
+                if (bVisible) {
+                    bAnyTileVisible = true;
+                }
+            });
+            oPanel.setVisible(bAnyTileVisible)
+        }.bind(this));
 
-
-           // Apply the filter if there is a search query
+           // applying filter if there is a search query
            if (sQuery) {
                aTiles.forEach(function (oTile) {
                    var sTileHeader = oTile.getHeader();
@@ -59,13 +62,5 @@ sap.ui.define([
                });
            }
        },
-
-       pressTile: function (oEvent) {
-           // Implement what happens when a tile is pressed
-           var oTile = oEvent.getSource();
-           var sTileHeader = oTile.getHeader();
-           console.log("Tile pressed: " + sTileHeader);
-           // You can navigate or perform other actions based on the tile
-       }
    });
 });
