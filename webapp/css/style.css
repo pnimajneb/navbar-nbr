@@ -8,3 +8,7 @@
 .tileHeaderMarginTop {
     margin-top: 50px;
 }
+
+.customHeader {
+    box-shadow: none;
+}
