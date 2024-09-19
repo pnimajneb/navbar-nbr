@@ -2,7 +2,7 @@
     controllerName="sap.ui.demo.nav.controller.IconTabHeader"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
-	<IconTabHeader id="iconTabHeader" mode="Inline" select=".onTabSelect">
+	<IconTabHeader class="sapUiResponsivePadding" id="iconTabHeader" mode="Inline" select=".onTabSelect">
 		<items>
 			<IconTabFilter key="trasse" text="Trasse"/>
 			<IconTabFilter key="bestellprozess" text="Bestellprozess"/>

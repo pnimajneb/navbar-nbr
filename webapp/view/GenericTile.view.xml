@@ -1,17 +1,15 @@
 <mvc:View
     controllerName="sap.ui.demo.nav.controller.GenericTile"
     xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
     xmlns="sap.m">
     <List 
     id="tileList"
     class="sapUiResponsiveMargin"
     width="auto"
     items="{ 
-        path : 'tile>/Tiles',
-		sorter : {
-			path : 'TileName'
-			}
-        }">
+        path : 'tile>/Tiles'
+            }">
 		<headerToolbar>
          <Toolbar>
             <Title text="Search Bar"/>
