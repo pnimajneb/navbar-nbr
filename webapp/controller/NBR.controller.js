@@ -7,7 +7,7 @@ sap.ui.define([
        onInit: function () {
         // any initialization logic here
        },
-
+       // Event handler for the tab select event
        onTabSelect: function(oEvent) {
             // get the selected key
             var sKey = oEvent.getParameter("key");
