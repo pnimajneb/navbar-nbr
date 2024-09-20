@@ -2,10 +2,193 @@
    controllerName="sap.ui.demo.nav.controller.Nbr"
    xmlns="sap.m"
    xmlns:mvc="sap.ui.core.mvc">
-   <Page title="NBR" class="sapUiResponsiveContentPadding">
+   <Page 
+      title="NBR" 
+      showNavButton="true">
       <content>
-         <mvc:XMLView viewName="sap.ui.demo.nav.view.IconTabHeader"/>
-	  	   <mvc:XMLView viewName="sap.ui.demo.nav.view.GenericTile"/>
+         <Panel class="sapUiNoContentPadding">
+            <content>
+            <FlexBox justifyContent="SpaceBetween" backgroundDesign="Solid">
+               <IconTabHeader id="iconTabHeader" mode="Inline" select=".onTabSelect" class="customHeader">
+                  <items>
+                     <IconTabFilter key="trasse" text="Trasse"/>
+                     <IconTabFilter key="bestellprozess" text="Bestellprozess"/>
+                     <IconTabFilter key="terminplanung" text="Terminplanung"/>
+                     <IconTabFilter key="benutzerverwaltung" text="Benutzerverwaltung"/>
+                     <IconTabFilter key="stammdaten" text="Stammdaten"/>
+                     <IconTabFilter key="docsEditor" text="DocsEditor"/>
+                  </items>
+               </IconTabHeader>
+               <SearchField placeholder="Search..." liveChange=".onFilterTiles" width="100%" class="customSearchField"/>
+               </FlexBox>
+               <Panel headerText="NBR" class="tileHeaderMarginTop">
+                  <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" 
+                    header="Trasse" 
+                    press="pressTile">
+                    <TileContent>
+                        <ImageContent src="sap-icon://home-share" />
+                    </TileContent>
+                </GenericTile>
+                <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" 
+                    header="Bestellprozess" 
+                    press="pressTile">
+                    <TileContent>
+                        <ImageContent src="sap-icon://home-share" />
+                    </TileContent>
+                </GenericTile>
+                <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" 
+                    header="Terminplanung" 
+                    press="pressTile">
+                    <TileContent>
+                        <ImageContent src="sap-icon://home-share" />
+                    </TileContent>
+                </GenericTile>
+                <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" 
+                    header="Benutzerverwaltung" 
+                    press="pressTile">
+                    <TileContent>
+                        <ImageContent src="sap-icon://home-share" />
+                    </TileContent>
+                </GenericTile>
+                <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" 
+                    header="Stammdaten" 
+                    press="pressTile">
+                    <TileContent>
+                        <ImageContent src="sap-icon://home-share" />
+                    </TileContent>
+                </GenericTile>
+                <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" 
+                    header="Docs editor" 
+                    press="pressTile">
+                    <TileContent>
+                        <ImageContent src="sap-icon://home-share" />
+                    </TileContent>
+                </GenericTile>
+               </Panel>
+               <Panel headerText="NBR > Trasse" id="PanelTrasse" class="tileHeaderMarginTop">
+                  <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" 
+                    header="Trassenübersicht" 
+                    press="pressTile">
+                    <TileContent>
+                        <ImageContent src="sap-icon://home-share" />
+                    </TileContent>
+                </GenericTile>
+               </Panel>
+                <Panel headerText="NBR > Bestellprozess" id="PanelBestellprozess" class="tileHeaderMarginTop">
+                  <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" 
+                    header="Maststahl" 
+                    press="pressTile">
+                    <TileContent>
+                        <ImageContent src="sap-icon://home-share" />
+                    </TileContent>
+                </GenericTile>
+                <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" 
+                    header="Seile" 
+                    press="pressTile">
+                    <TileContent>
+                        <ImageContent src="sap-icon://home-share" />
+                    </TileContent>
+                </GenericTile>
+                <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" 
+                    header="Armaturen" 
+                    press="pressTile">
+                    <TileContent>
+                        <ImageContent src="sap-icon://home-share" />
+                    </TileContent>
+                </GenericTile>
+                <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" 
+                    header="Erforderliche Aktionen" 
+                    press="pressTile">
+                    <TileContent>
+                        <ImageContent src="sap-icon://home-share" />
+                    </TileContent>
+                </GenericTile>
+                <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" 
+                    header="Materialliste" 
+                    press="pressTile">
+                    <TileContent>
+                        <ImageContent src="sap-icon://home-share" />
+                    </TileContent>
+                </GenericTile>
+                <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" 
+                    header="Materialstammdaten" 
+                    press="pressTile">
+                    <TileContent>
+                        <ImageContent src="sap-icon://home-share" />
+                    </TileContent>
+                </GenericTile>
+                <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" 
+                    header="Liefertermine" 
+                    press="pressTile">
+                    <TileContent>
+                        <ImageContent src="sap-icon://home-share" />
+                    </TileContent>
+                </GenericTile>
+               </Panel>
+               <Panel headerText="NBR > Terminplanung" id="PanelTerminplanung" class="tileHeaderMarginTop">
+                  <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" 
+                    header="Terminplaner" 
+                    press="pressTile">
+                    <TileContent>
+                        <ImageContent src="sap-icon://home-share" />
+                    </TileContent>
+                </GenericTile>
+                <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" 
+                    header="Dashboard" 
+                    press="pressTile">
+                    <TileContent>
+                        <ImageContent src="sap-icon://home-share" />
+                    </TileContent>
+                </GenericTile>
+               </Panel>
+               <Panel headerText="NBR > Benutzerverwaltung" id="PanelBenutzerverwaltung" class="tileHeaderMarginTop">
+                  <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" 
+                    header="Benutzer-Rollen-Zuordnung" 
+                    press="pressTile">
+                    <TileContent>
+                        <ImageContent src="sap-icon://home-share" />
+                    </TileContent>
+                </GenericTile>
+                <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" 
+                    header="Benutzerrollen OneLink" 
+                    press="pressTile">
+                    <TileContent>
+                        <ImageContent src="sap-icon://home-share" />
+                    </TileContent>
+                </GenericTile>
+               </Panel>
+               <Panel headerText="NBR > Stammdaten" id="PanelStammdaten" class="tileHeaderMarginTop">
+                  <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" 
+                    header="Trasse" 
+                    press="pressTile">
+                    <TileContent>
+                        <ImageContent src="sap-icon://home-share" />
+                    </TileContent>
+                </GenericTile>
+                <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" 
+                    header="Material" 
+                    press="pressTile">
+                    <TileContent>
+                        <ImageContent src="sap-icon://home-share" />
+                    </TileContent>
+                </GenericTile>
+                <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" 
+                    header="Bestellprozess" 
+                    press="pressTile">
+                    <TileContent>
+                        <ImageContent src="sap-icon://home-share" />
+                    </TileContent>
+                </GenericTile>
+                <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" 
+                    header="Terminplanung" 
+                    press="pressTile">
+                    <TileContent>
+                        <ImageContent src="sap-icon://home-share" />
+                    </TileContent>
+                </GenericTile>
+               </Panel>
+            </content>
+         </Panel>
       </content>
    </Page>
 </mvc:View>
