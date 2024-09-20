@@ -8,15 +8,33 @@ sap.ui.define([
         // any initialization logic here
        },
 
-       onTabSelect: function (oEvent) {
-         var sKey = oEvent.getParameter("key");
-         var oPanel = this.getView().byId("Panel" + sKey.charAt(0).toUpperCase() + sKey.slice(1)); // Convert key to Panel ID
+       onTabSelect: function(oEvent) {
+            // get the selected key
+            var sKey = oEvent.getParameter("key");
 
-         if (oPanel) {
-             var oPage = this.getView().byId("page"); // Assuming your Page control has the ID 'page'
-             oPage.scrollTo(oPanel.getId()); // Scroll to the Panel
-         }
-     },
+            // IDs of the panels that need to be scrolled to
+            var aPanels = [
+                "PanelTrasse",
+                "PanelBestellprozess",
+                "PanelTerminplanung",
+                "PanelBenutzerverwaltung",
+                "PanelStammdaten"
+            ];
+
+             // Find the corresponding panel that matches the key dynamically
+            var oView = this.getView();
+            var oPanel = aPanels.find(function(panelId) {
+            return panelId.toLowerCase().includes(sKey.toLowerCase());
+            });
+        
+            if (oPanel) {
+                var oPanelControl = oView.byId(oPanel);
+                if (oPanelControl) {
+                // Scroll the page to the matching panel
+                oPanelControl.getDomRef().scrollIntoView({ behavior: "smooth" });
+                }
+            }
+        },
 
        onFilterTiles: function(oEvent) {
         // get search query
