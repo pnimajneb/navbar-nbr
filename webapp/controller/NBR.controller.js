@@ -75,6 +75,7 @@ sap.ui.define([
                aTiles.forEach(function (oTile) {
                    var sTileHeader = oTile.getHeader();
                    // Filter logic: Check if the tile's header contains the search query
+                   //test
                    var bVisible = sTileHeader.toLowerCase().includes(sQuery.toLowerCase());
                    oTile.setVisible(bVisible);
                });
