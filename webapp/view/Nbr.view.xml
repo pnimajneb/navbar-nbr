@@ -7,20 +7,19 @@
       showNavButton="true">
       <content>
          <Panel class="sapUiNoContentPadding">
-            <content>
-            <FlexBox justifyContent="SpaceBetween" backgroundDesign="Solid">
-               <IconTabHeader id="iconTabHeader" mode="Inline" select=".onTabSelect" class="customHeader">
-                  <items>
-                     <IconTabFilter key="trasse" text="Trasse"/>
-                     <IconTabFilter key="bestellprozess" text="Bestellprozess"/>
-                     <IconTabFilter key="terminplanung" text="Terminplanung"/>
-                     <IconTabFilter key="benutzerverwaltung" text="Benutzerverwaltung"/>
-                     <IconTabFilter key="stammdaten" text="Stammdaten"/>
-                     <IconTabFilter key="docsEditor" text="DocsEditor"/>
-                  </items>
-               </IconTabHeader>
-               <SearchField placeholder="Search..." liveChange=".onFilterTiles" width="100%" class="customSearchField"/>
-               </FlexBox>
+                <FlexBox id="flexBox" justifyContent="SpaceBetween" backgroundDesign="Solid" class="responsiveFlexbox">
+                   <IconTabHeader id="iconTabHeader" mode="Inline" select=".onTabSelect" class="customHeader">
+                      <items>
+                         <IconTabFilter key="trasse" text="Trasse"/>
+                         <IconTabFilter key="bestellprozess" text="Bestellprozess"/>
+                         <IconTabFilter key="terminplanung" text="Terminplanung"/>
+                         <IconTabFilter key="benutzerverwaltung" text="Benutzerverwaltung"/>
+                         <IconTabFilter key="stammdaten" text="Stammdaten"/>
+                         <IconTabFilter key="docsEditor" text="DocsEditor"/>
+                      </items>
+                   </IconTabHeader>
+                   <SearchField placeholder="Search..." liveChange=".onFilterTiles" width="100%" class="customSearchField sapUiNoContentPadding"/>
+                </FlexBox>
                <Panel headerText="NBR" class="tileHeaderMarginTop">
                   <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" 
                     header="Trasse" 
@@ -187,7 +186,6 @@
                     </TileContent>
                 </GenericTile>
                </Panel>
-            </content>
          </Panel>
       </content>
    </Page>

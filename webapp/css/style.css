@@ -1,14 +1,23 @@
-.tilesSeparately {
-    display: flex;
-    flex-direction: column;
-    margin-top: 200px;
-    margin-bottom: 200px;
-}
-
 .tileHeaderMarginTop {
     margin-top: 50px;
 }
 
 .customHeader {
     box-shadow: none;
+}
+
+.responsiveFlexbox {
+    position: sticky;
+    z-index: 1000;
+    width: auto;
+}
+
+@media (max-width: 966px) {
+    .responsiveFlexbox {
+        flex-direction: column;
+    }
+    .customSearchField {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
 }
